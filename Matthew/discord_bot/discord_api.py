@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import discord
 import os
-from Matthew.openai import chatgpt_response
+from Friday_bot.Matthew.chatgpt_ai.openai import chatgpt_response
 
 
 load_dotenv()

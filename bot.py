@@ -1,7 +1,7 @@
 from discord.ext import commands
 import discord
 
-BOT_TOKEN = "NDI1Mzc1OTk3NTAwNTg4MDQ0.GW2cgQ.WnoNLz15RGEEnpoaHoQ0Q28CAKtP38mu_yIytA"
+BOT_TOKEN = "NDI1Mzc1OTk3NTAwNTg4MDQ0.GepsGZ.-gcWUM3t17DMVJfyz3qFSaaa-vR0T2yD-gJcRQ"
 bot = commands.Bot(command_prefix=">", intents=discord.Intents.all())
 
 @bot.event
@@ -16,7 +16,6 @@ async def count(ctx, user: discord.Member, word):
             if word.lower() in message.content.lower():
                 counter += 1
 
-    await ctx.send(f"{user.mention} has said "{word}", {counter} times!")
 
 @bot.command()
 async def CountNWord(ctx, user: discord.Member):

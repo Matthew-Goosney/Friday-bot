@@ -1,7 +1,7 @@
 from discord.ext import commands
 import discord
 
-BOT_TOKEN = "NDI1Mzc1OTk3NTAwNTg4MDQ0.GepsGZ.-gcWUM3t17DMVJfyz3qFSaaa-vR0T2yD-gJcRQ"
+BOT_TOKEN = "NDI1Mzc1OTk3NTAwNTg4MDQ0.GGTy2f.y864YJPSz18uYlKKlNcGODK-9k6y3aIJx8eU3E"
 bot = commands.Bot(command_prefix=">", intents=discord.Intents.all())
 
 @bot.event

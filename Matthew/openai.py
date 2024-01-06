@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import openai
 import os
-from Friday-bot.Matthew.openai import chatgpt_response
 
 load_dotenv()
 

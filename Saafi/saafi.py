@@ -4,11 +4,10 @@ from jproperties import Properties
 
 
 configs = Properties()    
-with open("../properties.properties", "rb") as config_file:
+with open("properties.properties", "rb") as config_file:
     configs.load(config_file)
-    TOKEN = configs.get("TOKEN")[0]
-
-BOT_TOKEN = TOKEN
+    TOKEN = configs.get("TOKEN").data
+    print(TOKEN)
 
 bot = commands.Bot(command_prefix=">", intents=discord.Intents.all())
 
@@ -24,7 +23,6 @@ async def on_message(message):
         if word in message_content:
             print(word)
             await message.delete()
-            await message.channel.send("Don't use that word!")
-    
+            await message.channel.send("Don't use that word!") 
 
-bot.run(BOT_TOKEN)
+bot.run(TOKEN)

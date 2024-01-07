@@ -1,13 +1,17 @@
 from discord.ext import commands
 import discord
+from jproperties import Properties
 
-BOT_TOKEN = "MTE5MzI3NzQ4NjUxMTk2MDEwNA.Gl7Lhb.bMZdNyLrXWa1nYuQ0zpD-UN0RVQIJi4jS0sZGE"
+
+configs = Properties()    
+with open("../properties.properties", "rb") as config_file:
+    configs.load(config_file)
+    TOKEN = configs.get("TOKEN")[0]
+
+BOT_TOKEN = TOKEN
+
 bot = commands.Bot(command_prefix=">", intents=discord.Intents.all())
 
-with open('./constantSwears.txt', 'r') as f:
-    global swears
-    words = f.read()
-    swears = words.split()
 
 @bot.event
 async def on_ready():
@@ -21,7 +25,6 @@ async def on_message(message):
             print(word)
             await message.delete()
             await message.channel.send("Don't use that word!")
-    await bot.process_commands(message)
     
 
 bot.run(BOT_TOKEN)
